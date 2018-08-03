@@ -1,0 +1,33 @@
+\section{Design Patterns}
+
+\subsection{Types of advantages}
+\begin{description}
+    \item[Ease of use]: Creating a subclass based on the base class is easy
+        to manage, it only requires the subclass to provide either a
+        concrete implementation of an abstract method, or a more specific
+        implementation of a method that is allowed by the base class.
+    \item[open-closed principle]: the design philosophy is to be ``Open to
+        Extension, Closed to Modification''.  Here the base class provides a
+        framework code that can be extended through inheritance to allow
+        instances of new-but-related classes with new fields and methods.
+        This allows designers to be achieve new design requirements without
+        having to change the code of the base class, or the algorithms and
+        data structures which operate on instances of the base class.
+    \item[reusability of the code]: Duplication of code is minimized through
+        the use of base classes to establish a common pattern among
+        subclasses. ``Inheritance'' means subclasses only need to write down
+        overwritten methods for the base class to use.
+    \item[flexibility]: Due to its reliance on
+        inheritance to establish the behavior of subclasses, usually
+        subclasses are restrained to inheriting from one base class at a
+        time. As a result, any subclass is restrained to follow the general
+        behavior established by its parent base class.
+    \item[maintainability]: Reading the flow of code is
+        difficult due to the disjoint nature of the code. Code within the
+        base class only provides the steps that its subclasses will take,
+        whereas subclasses only contain details for a step. In addition,
+        additional functionality is difficult to implement due to the tight
+        coupling between classes. Adding features to the base class
+        requires the change to be applied to all related subclasses.
+\end{description}
+

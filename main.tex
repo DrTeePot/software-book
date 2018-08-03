@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage{amsthm,amsmath,amsfonts,amssymb}
+\usepackage[ruled,noline,noend]{algorithm2e}
+\usepackage{enumerate}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage[]{hyperref}
+
+% set table of contents level
+\setcounter{tocdepth}{2}
+
+% for list stuff
+\usepackage{enumitem}
+
+% For code examples
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    keepspaces=true,                 
+    numbers=left,                    
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% So we can show the page number and section in the header
+% TODO I want it to just show "Design Patterns" or "Architectures"
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[L]{\nouppercase{\rightmark}}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Remove numbers from titles but keep incremementors
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{}
+\titleformat{\subsubsection}{\normalfont\bfseries}{}{0pt}{}
+
+% for comparison 
+\usepackage{multicol}
+% \setlength{\columnsep}{1cm}
+
+\newenvironment{summary}{
+    \begin{itshape}
+}{
+\end{itshape}
+}
+
+\newenvironment{components}{
+    \begin{description}
+}{
+    \end{description}
+}
+
+\newenvironment{nfps}{
+    \subsubsection{Non-functional Properties}
+    \begin{description}[noitemsep,style=multiline,leftmargin=4cm]
+}{
+    \end{description}
+}
+
+\newcommand{\comparison}[2]{
+    \begin{multicols}{2} [ \subsubsection{Comparison} ]
+        {\bf Advantages} \\ #1
+        \vfill
+        \columnbreak
+        {\bf Disadvantages}\\ #2
+        \vfill
+    \end{multicols}
+}
+
+\newcommand{\pattern}[1]{\newpage\subsection{#1}}
+
+\begin{document}
+
+% Add a title page and table of contents
+\tableofcontents
+
+\input{./src/design}
+
+\input{./src/visitor}
+\input{./src/template}
+\input{./src/strategy}
+\input{./src/state}
+\input{./src/proxy}
+\input{./src/observer}
+\input{./src/mediator.tex}
+\input{./src/flyweight.tex}
+\input{./src/factory.tex}
+\input{./src/facade.tex}
+\input{./src/decorator.tex}
+\input{./src/composite.tex}
+\input{./src/command.tex}
+
+\newpage
+\input{./src/architecture}
+
+\input{./src/virtual-machine.tex}
+\input{./src/pub-sub.tex}
+\input{./src/pipe-filter.tex}
+\input{./src/peer-to-peer.tex}
+\input{./src/mobile-code.tex}
+\input{./src/layered.tex}
+\input{./src/interpreter.tex}
+\input{./src/event-based.tex}
+\input{./src/distributed.tex}
+\input{./src/client-server.tex}
+\input{./src/blackboard.tex}
+
+\end{document}
